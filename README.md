@@ -14,6 +14,18 @@ Measures how much two common changes improve document search for an AI agent, us
 
 Metrics: precision, recall, F1 and MRR for search; answer accuracy (an LLM judge against reference answers) end to end.
 
+### Results (10 November 2026)
+
+Gemini Embedding 2, 100 questions, top 3 passages; answers by Claude Haiku 5.5, judged by Claude Sonnet 5.5.
+
+| Level | Precision | Recall | F1 | MRR | Answer accuracy |
+|---|---|---|---|---|---|
+| Plain search | 0.45 | 0.74 | 0.56 | 0.90 | 86% |
+| + summary indexing | 0.46 | 0.74 | 0.57 | 0.89 | 91% |
+| + re-ranking | 0.46 | 0.75 | 0.57 | 0.88 | 88% |
+
+Every answer, retrieved passage and judge verdict is in `rag-gemini/results/full/results.json`. Write-up: [Gemini Embedding 2 for RAG](https://calinalabs.com/blog/gemini-embedding-rag/).
+
 ### Run it
 
 Requires Python 3.10+ and no third-party packages.

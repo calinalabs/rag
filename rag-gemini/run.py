@@ -117,7 +117,7 @@ class Claude:
         self.key = os.environ["ANTHROPIC_API_KEY"]
 
     def ask(self, model, prompt, max_tokens=1500):
-        res = post(self.URL, {"model": model, "max_tokens": max_tokens, "temperature": 0,
+        res = post(self.URL, {"model": model, "max_tokens": max_tokens,
                               "messages": [{"role": "user", "content": prompt}]},
                    {"x-api-key": self.key, "anthropic-version": "2023-06-01"})
         return "".join(b.get("text", "") for b in res["content"])
