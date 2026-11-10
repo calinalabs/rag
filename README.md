@@ -1,6 +1,16 @@
-# Calina Labs experiments
+# Calina Labs: RAG experiments
 
-Code behind the experiments we write about on the [Calina Labs blog](https://calinalabs.com/blog/).
+Code and full results behind the retrieval experiments published by [Calina Labs](https://calinalabs.com), an independent UK consultancy that builds agentic processes, private knowledge bases and process automation.
+
+- Website: [calinalabs.com](https://calinalabs.com)
+- Write-ups: [calinalabs.com/blog](https://calinalabs.com/blog/)
+- Knowledge bases on your own documents: [calinalabs.com/services/knowledge-base](https://calinalabs.com/services/knowledge-base/)
+- Contact: [calinalabs.com/contact](https://calinalabs.com/contact/)
+
+| Folder | Experiment | Write-up |
+|---|---|---|
+| [`rag-gemini/`](rag-gemini/) | Three-level RAG evaluation with Gemini Embedding 2, plus k, embedding-size and BM25/hybrid sweeps | [Testing RAG with Gemini Embedding 2](https://calinalabs.com/blog/gemini-embedding-rag/) |
+| [`rag-finetune/`](rag-finetune/) | Fine-tuning an open-weight embedding model (bge-small) on synthetic questions | [Fine-tuning a small open embedding model on a laptop](https://calinalabs.com/blog/fine-tune-embedding-model/) |
 
 ## rag-gemini: three-level RAG evaluation with Gemini Embedding 2
 
@@ -47,3 +57,11 @@ Embeddings are cached in `results/embed-cache`, so an interrupted run resumes wh
 - Gemini Embedding 2 does not accept `task_type`, so questions and passages are embedded the same way.
 - The script always takes the top 3 passages. It does not drop results below a fixed similarity score, because such thresholds are specific to one embedding model.
 - The evaluation set is downloaded from its original source (MIT licence) by `get_data.sh`; it is not redistributed here.
+
+## rag-finetune: post-training an open embedding model
+
+Fine-tunes `BAAI/bge-small-en-v1.5` on synthetic questions for the same passages and scores it on the same 100 test questions. Recall@3 rises from 0.62 to 0.71 and MRR from 0.73 to 0.87. Details and commands: [`rag-finetune/README.md`](rag-finetune/README.md). Write-up: [Fine-tuning a small open embedding model on a laptop](https://calinalabs.com/blog/fine-tune-embedding-model/).
+
+---
+
+Built by [Calina Labs](https://calinalabs.com). Questions about applying this to your own documents? [Get in touch](https://calinalabs.com/contact/).
