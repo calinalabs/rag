@@ -1,0 +1,92 @@
+{
+  "base_model": "BAAI/bge-small-en-v1.5",
+  "train_questions": 693,
+  "epochs": 3,
+  "batch": 32,
+  "leakage": {
+    "max_similarity": 0.9618,
+    "over_0_9": 15,
+    "exact_matches": 0,
+    "closest": [
+      {
+        "similarity": 0.962,
+        "test": "How can you specify a system prompt using the Text Completions API versus the Messages API?",
+        "train": "How do I add a system prompt when using the Messages API instead of Text Completions?"
+      },
+      {
+        "similarity": 0.942,
+        "test": "What embeddings provider does Anthropic recommend for customized domain-specific models, and what capabilities does this provider offer?",
+        "train": "Which embeddings provider does the Anthropic guide recommend, and what kinds of custom models does it offer?"
+      },
+      {
+        "similarity": 0.94,
+        "test": "What does the temperature parameter do when working with large language models?",
+        "train": "What does temperature do to a language model's output?"
+      }
+    ]
+  },
+  "A_base": {
+    "n": 100,
+    "precision": 0.3967,
+    "recall": 0.62,
+    "mrr": 0.73,
+    "recall_two_passages": 0.6333
+  },
+  "B_finetuned_all": {
+    "n": 100,
+    "precision": 0.4433,
+    "recall": 0.7083,
+    "mrr": 0.87,
+    "recall_two_passages": 0.6667
+  },
+  "B_no_close_match": {
+    "untuned": {
+      "n": 85,
+      "precision": 0.3922,
+      "recall": 0.6059,
+      "mrr": 0.7373,
+      "recall_two_passages": 0.619
+    },
+    "finetuned": {
+      "n": 85,
+      "precision": 0.4471,
+      "recall": 0.7039,
+      "mrr": 0.8725,
+      "recall_two_passages": 0.6667
+    }
+  },
+  "C_heldout": {
+    "seen_passages": {
+      "untuned": {
+        "n": 30,
+        "precision": 0.3444,
+        "recall": 0.6167,
+        "mrr": 0.6889,
+        "recall_two_passages": 0.6579
+      },
+      "finetuned_half": {
+        "n": 30,
+        "precision": 0.3889,
+        "recall": 0.75,
+        "mrr": 0.7944,
+        "recall_two_passages": 0.6579
+      }
+    },
+    "unseen_passages": {
+      "untuned": {
+        "n": 29,
+        "precision": 0.3908,
+        "recall": 0.6437,
+        "mrr": 0.7184,
+        "recall_two_passages": 0.6364
+      },
+      "finetuned_half": {
+        "n": 29,
+        "precision": 0.4713,
+        "recall": 0.7931,
+        "mrr": 0.931,
+        "recall_two_passages": 0.7273
+      }
+    }
+  }
+}
