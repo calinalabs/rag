@@ -223,10 +223,13 @@ def main():
     ap.add_argument("--data", required=True, type=pathlib.Path)
     ap.add_argument("--out", required=True, type=pathlib.Path)
     ap.add_argument("--limit", type=int, default=0)
+    ap.add_argument("--k", type=int, default=3, help="passages given to the answer model")
     ap.add_argument("--dry-run", action="store_true")
     ap.add_argument("--no-answers", action="store_true", help="retrieval metrics only (cheapest)")
     ap.add_argument("--search-only", action="store_true", help="levels 1-2 retrieval only: needs just GEMINI_API_KEY")
     a = ap.parse_args()
+    global K
+    K = a.k
     if a.search_only:
         a.no_answers = True
 

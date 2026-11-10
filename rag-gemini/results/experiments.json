@@ -1,0 +1,132 @@
+{
+  "k_sweep": [
+    {
+      "k": 1,
+      "precision": 0.84,
+      "recall": 0.4808,
+      "mrr": 0.84,
+      "recall_one_passage": 0.8824,
+      "recall_two_passages": 0.4067
+    },
+    {
+      "k": 3,
+      "precision": 0.4533,
+      "recall": 0.7367,
+      "mrr": 0.8983,
+      "recall_one_passage": 1.0,
+      "recall_two_passages": 0.6867
+    },
+    {
+      "k": 5,
+      "precision": 0.306,
+      "recall": 0.8142,
+      "mrr": 0.9028,
+      "recall_one_passage": 1.0,
+      "recall_two_passages": 0.7733
+    },
+    {
+      "k": 10,
+      "precision": 0.172,
+      "recall": 0.9033,
+      "mrr": 0.9045,
+      "recall_one_passage": 1.0,
+      "recall_two_passages": 0.88
+    }
+  ],
+  "dimensions": [
+    {
+      "k": 3,
+      "precision": 0.4533,
+      "recall": 0.7367,
+      "mrr": 0.8983,
+      "recall_one_passage": 1.0,
+      "recall_two_passages": 0.6867,
+      "dimensions": 3072
+    },
+    {
+      "k": 3,
+      "precision": 0.45,
+      "recall": 0.7317,
+      "mrr": 0.9,
+      "recall_one_passage": 1.0,
+      "recall_two_passages": 0.68,
+      "dimensions": 1536
+    },
+    {
+      "k": 3,
+      "precision": 0.45,
+      "recall": 0.7317,
+      "mrr": 0.895,
+      "recall_one_passage": 1.0,
+      "recall_two_passages": 0.68,
+      "dimensions": 768
+    },
+    {
+      "k": 3,
+      "precision": 0.4433,
+      "recall": 0.7158,
+      "mrr": 0.8833,
+      "recall_one_passage": 1.0,
+      "recall_two_passages": 0.6467,
+      "dimensions": 256
+    }
+  ],
+  "methods": [
+    {
+      "k": 3,
+      "precision": 0.37,
+      "recall": 0.5975,
+      "mrr": 0.7517,
+      "recall_one_passage": 0.8235,
+      "recall_two_passages": 0.54,
+      "method": "BM25 keyword search"
+    },
+    {
+      "k": 3,
+      "precision": 0.4533,
+      "recall": 0.7367,
+      "mrr": 0.8983,
+      "recall_one_passage": 1.0,
+      "recall_two_passages": 0.6867,
+      "method": "Gemini Embedding 2"
+    },
+    {
+      "k": 3,
+      "precision": 0.4533,
+      "recall": 0.7283,
+      "mrr": 0.92,
+      "recall_one_passage": 0.9412,
+      "recall_two_passages": 0.68,
+      "method": "Hybrid (RRF)"
+    }
+  ],
+  "methods_k5": [
+    {
+      "k": 5,
+      "precision": 0.25,
+      "recall": 0.6625,
+      "mrr": 0.7632,
+      "recall_one_passage": 0.8235,
+      "recall_two_passages": 0.6133,
+      "method": "BM25 keyword search"
+    },
+    {
+      "k": 5,
+      "precision": 0.306,
+      "recall": 0.8142,
+      "mrr": 0.9028,
+      "recall_one_passage": 1.0,
+      "recall_two_passages": 0.7733,
+      "method": "Gemini Embedding 2"
+    },
+    {
+      "k": 5,
+      "precision": 0.306,
+      "recall": 0.8083,
+      "mrr": 0.925,
+      "recall_one_passage": 0.9412,
+      "recall_two_passages": 0.7733,
+      "method": "Hybrid (RRF)"
+    }
+  ]
+}

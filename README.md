@@ -24,7 +24,7 @@ Gemini Embedding 2, 100 questions, top 3 passages; answers by Claude Haiku 5.5, 
 | + summary indexing | 0.46 | 0.74 | 0.57 | 0.89 | 91% |
 | + re-ranking | 0.46 | 0.75 | 0.57 | 0.88 | 88% |
 
-Every answer, retrieved passage and judge verdict is in `rag-gemini/results/full/results.json`. Write-up: [Gemini Embedding 2 for RAG](https://calinalabs.com/blog/gemini-embedding-rag/).
+Every answer, retrieved passage and judge verdict is in `rag-gemini/results/full/results.json`. Write-up: [Testing RAG with Gemini Embedding 2](https://calinalabs.com/blog/gemini-embedding-rag/).
 
 ### Run it
 

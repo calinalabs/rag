@@ -1,0 +1,39 @@
+{
+  "embedding_model": "gemini-embedding-2",
+  "answer_model": "claude-haiku-5-5",
+  "judge_model": "claude-sonnet-5-5",
+  "questions": 100,
+  "k": 5,
+  "rerank_candidates": 20,
+  "dry_run": false,
+  "levels": {
+    "level1": {
+      "precision": 0.3059999999999996,
+      "recall": 0.8141666666666666,
+      "f1": 0.444817735456033,
+      "f1_per_query": 0.43726190476190463,
+      "mrr": 0.9028333333333332,
+      "accuracy": 0.91,
+      "judge_unparsed": 0
+    },
+    "level2": {
+      "precision": 0.31199999999999956,
+      "recall": 0.8333333333333333,
+      "f1": 0.4540162980209541,
+      "f1_per_query": 0.4468253968253966,
+      "mrr": 0.9015,
+      "accuracy": 0.92,
+      "judge_unparsed": 0
+    },
+    "level3": {
+      "precision": 0.3079999999999996,
+      "recall": 0.8158333333333333,
+      "f1": 0.44717781402936335,
+      "f1_per_query": 0.4394047619047617,
+      "mrr": 0.8876666666666666,
+      "accuracy": 0.93,
+      "judge_unparsed": 0
+    }
+  },
+  "seconds": 189
+}

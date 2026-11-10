@@ -3,3 +3,6 @@ __pycache__/
 *.env
 rag-gemini/data/
 rag-gemini/results/embed-cache/
+.venv/
+rag-finetune/models/
+rag-finetune/results/ckpt-*/
