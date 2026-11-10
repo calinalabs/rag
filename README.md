@@ -10,7 +10,7 @@ Code and full results behind the retrieval experiments published by [Calina Labs
 | Folder | Experiment | Write-up |
 |---|---|---|
 | [`rag-gemini/`](rag-gemini/) | Three-level RAG evaluation with Gemini Embedding 2, plus k, embedding-size and BM25/hybrid sweeps | [Testing RAG with Gemini Embedding 2](https://calinalabs.com/blog/gemini-embedding-rag/) |
-| [`rag-finetune/`](rag-finetune/) | Fine-tuning an open-weight embedding model (bge-small) on synthetic questions | [Fine-tuning a small open embedding model on a laptop](https://calinalabs.com/blog/fine-tune-embedding-model/) |
+| [calinalabs/post-training](https://github.com/calinalabs/post-training) (separate repo) | Fine-tuning an open-weight embedding model (bge-small) on synthetic questions | [Fine-tuning a small open embedding model on a laptop](https://calinalabs.com/blog/fine-tune-embedding-model/) |
 
 ## rag-gemini: three-level RAG evaluation with Gemini Embedding 2
 
@@ -41,7 +41,7 @@ Every answer, retrieved passage and judge verdict is in `rag-gemini/results/full
 Requires Python 3.10+ and no third-party packages.
 
 ```bash
-cd rag-gemini
+git clone https://github.com/calinalabs/rag && cd rag/rag-gemini
 ./get_data.sh                                     # download the evaluation set into ./data
 export GEMINI_API_KEY=...                         # or put it in ~/.config/calinalabs/keys.env
 python3 run.py --data data --out results --search-only     # levels 1-2, Gemini key only
@@ -58,9 +58,9 @@ Embeddings are cached in `results/embed-cache`, so an interrupted run resumes wh
 - The script always takes the top 3 passages. It does not drop results below a fixed similarity score, because such thresholds are specific to one embedding model.
 - The evaluation set is downloaded from its original source (MIT licence) by `get_data.sh`; it is not redistributed here.
 
-## rag-finetune: post-training an open embedding model
+## Post-training an open embedding model
 
-Fine-tunes `BAAI/bge-small-en-v1.5` on synthetic questions for the same passages and scores it on the same 100 test questions. Recall@3 rises from 0.62 to 0.71 and MRR from 0.73 to 0.87. Details and commands: [`rag-finetune/README.md`](rag-finetune/README.md). Write-up: [Fine-tuning a small open embedding model on a laptop](https://calinalabs.com/blog/fine-tune-embedding-model/).
+Moved to its own repository: [calinalabs/post-training](https://github.com/calinalabs/post-training). It fine-tunes `BAAI/bge-small-en-v1.5` on synthetic questions for the same passages and scores it on the same 100 test questions. Recall@3 rises from 0.62 to 0.71 and MRR from 0.73 to 0.87. Write-up: [Fine-tuning a small open embedding model on a laptop](https://calinalabs.com/blog/fine-tune-embedding-model/).
 
 ---
 
